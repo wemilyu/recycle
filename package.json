@@ -17,7 +17,7 @@
     "node": "14.x"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cd frontend/react-app && react-scripts start",
     "start-api": "cd api && venv/bin/flask run --no-debugger",
     "build": "cd frontend/react-app && react-scripts build",
     "test": "react-scripts test",
