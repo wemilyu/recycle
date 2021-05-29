@@ -14,11 +14,10 @@
   "engines": {
     "node": "14.x"
   },
-  "build": "cd frontend/react-app",
   "scripts": {
     "start": "react-scripts start",
     "start-api": "cd api && venv/bin/flask run --no-debugger",
-    "build": "react-scripts build",
+    "build": "cd frontend/react-app && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
