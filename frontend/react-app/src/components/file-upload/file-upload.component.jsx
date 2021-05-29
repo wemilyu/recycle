@@ -1,3 +1,4 @@
+// https://dev.to/chandrapantachhetri/responsive-react-file-upload-component-with-drag-and-drop-4ef8
 import React, { useRef, useState } from "react";
 import {
   FileUploadContainer,
@@ -70,10 +71,10 @@ const FileUpload = ({
     <>
       <FileUploadContainer>
         <InputLabel>{label}</InputLabel>
-        <DragDropText>Drag and drop your files anywhere or</DragDropText>
+        {/* <DragDropText>Drag and drop your files anywhere or</DragDropText> */}
         <UploadFileBtn type="button" onClick={handleUploadBtnClick}>
           <i className="fas fa-file-upload" />
-          <span> Upload {otherProps.multiple ? "files" : "a file"}</span>
+          <span> Upload {otherProps.multiple ? "file" : "a file"}</span>
         </UploadFileBtn>
         <FormField
           type="file"
@@ -85,7 +86,7 @@ const FileUpload = ({
         />
       </FileUploadContainer>
       <FilePreviewContainer>
-        <span>To Upload</span>
+        {/* <span>To Upload</span> */}
         <PreviewList>
           {Object.keys(files).map((fileName, index) => {
             let file = files[fileName];

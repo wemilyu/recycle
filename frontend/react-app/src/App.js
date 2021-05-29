@@ -1,15 +1,23 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import React, { useEffect, useState } from 'react';
-import FileUpload from "/components/file-upload/file-upload.component";
+import FileUpload from "./components/file-upload/file-upload.component";
 import axios from 'axios'
 
 function App() {
   const [getMessage, setGetMessage] = useState({})
 
+  const [newUserInfo, setNewUserInfo] = useState({
+    profileImages: []
+  });
+
+  const updateUploadedFiles = (files) =>
+    setNewUserInfo({ ...newUserInfo, profileImages: files });
+
   const handleSubmit = (event) => {
     event.preventDefault();
-  }
+    //logic to create new user...
+  };
 
 
   useEffect(() => {
@@ -43,11 +51,10 @@ function App() {
           <form onSubmit={handleSubmit}>
             <FileUpload
               accept=".jpg,.png,.jpeg"
-              label="Profile Image(s)"
+              // label="Profile Image(s)"
               multiple
-              updateFilesCb={updateUploadedFiles}
+              // updateFilesCb={updateUploadedFiles}
             />
-            <button type="submit">Create New User</button>
           </form>
         </div>
 
